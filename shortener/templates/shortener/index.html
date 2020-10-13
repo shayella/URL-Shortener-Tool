@@ -1,0 +1,107 @@
+{%extends 'shortener/base.html'%}
+
+{%block content%}
+<section id="header">
+	<div class="inner">
+		<!-- <span class="icon solid major fa-cloud fas fa-bezier-curve"></span> -->
+		<i class="icon solid major fas fa-unlink "></i>
+		<h1>Hi, I'm <strong>Slash</strong>, 	a free URL Shortener<br />
+	 <small id="small">Minify your links, and make them memorable in just seconds</small> </h1>
+		<section class="main ">
+			<div class="container">
+				{% if form.url.errors%}
+				<div class="row gtr-150">
+					<div class="col-7 off-1 col-12-medium">
+						<div class="alert off-1 align-left">
+							{%for error in form.url.errors%}
+								<span>{{form.url.errors}}</span>
+							{%endfor%}
+						</div>
+					</div>
+				</div>
+				{%endif%}
+				<form class="row gtr-150"  action="{%url 'home' %}" method="post">
+					<div class="col-8 off-1 col-12-medium">
+						{% csrf_token %}
+						{% for field in form %}
+					    <div class="fieldWrapper">
+					        {{ field.label_tag }} {{ field }}
+					    </div>
+						{% endfor %}
+					</div>
+					<div class="col-3 align-left col-12-medium">
+						<p>
+							<input type="submit" name="" value="Shorten">
+						</p>
+					</div>
+				</form>
+
+				<div class="row gtr-150">
+					{% if created %}
+					<div class="col-8 off-1 col-12-medium">
+						<table>
+							<tr>
+								<td><h4>Your Shortened URL :-</h4></td>
+								<td><strong><a id="shortened_url_id" href="{{obj.get_short_url}}">{{obj.get_short_url}}</a></strong> <br>
+									<small><a href="{% url 'url_count' obj.shortcode %}">Track number of clicks on this URL</a></small>
+								 </td>
+								<td class="tooltip">
+									<button  type="button" onclick="copyFunction()" name="button">Copy
+										<span id="copytooltiptext" class="tooltiptext">URL copied!</span>
+									</button>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div id="checkout-clicks" class="col-3 align-left col-12-medium ">
+						<table>
+							<tr>
+								<td>
+									<strong>Track & Analyse the number of clicks on any shortened URL</strong>
+									<span><a href="{%url 'url_count'%}">Track Now</a> </span>
+								 </td>
+							</tr>
+					</table>
+					</div>
+					{%else%}
+					<div id="checkout-clicks" class="col-8 off-1 align-left col-12-medium ">
+						<table>
+							<tr>
+								<td>
+									<strong>Track & Analyse the number of clicks on any shortened URL</strong>
+									<span><a href="{%url 'url_count'%}">Track Now</a> </span>
+								 </td>
+							</tr>
+					</table>
+					</div>
+					{%endif%}
+					</div>
+
+			</div>
+
+			<script>
+				function copyFunction(){
+					const link = document.querySelector('#shortened_url_id');
+					const range = document.createRange();
+					range.selectNode(link);
+					const selection = window.getSelection();
+					selection.removeAllRanges();
+					selection.addRange(range);
+
+					const successful = document.execCommand('copy');
+					selection.removeAllRanges();
+					tooltiptextElement = document.querySelector("#copytooltiptext")
+					tooltiptextElement.style.visibility = "visible";
+
+					setTimeout(function(){
+							tooltiptextElement.style.visibility='hidden';
+					}, 2500);
+				}
+
+			</script>
+			</div>
+		</section>
+	</div>
+</section>
+
+{%endblock%}

@@ -1,0 +1,22 @@
+{%extends 'shortener/base.html'%}
+
+{% block content%}
+<section id="one">
+  {%include 'shortener/logo.html'%}
+  <div class="main style1">
+    <div class="container">
+      <div class="row gtr-150">
+        <div class="col-10 off-2 col-12-medium align-left">
+          <div class="major">
+            <h1 >Total URL Clicks</h1>
+          </div>
+          <h3> Count : </h3><h2> <strong> 0{{obj.clickevent.count}}</strong> </h2>
+          <p>This shows the number of clicks on  Short URL: <strong> <a href="{{obj.get_short_url}}">{{obj.get_short_url}}</a> </strong> </p>
+         <p>Click here to  <a id="track-url" href="{%url 'url_count'%}">track number of clicks of a different short URL</a> </p> <br>
+          <a id="create-url"  href="{% url 'home'%}">Create another Short URL</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}

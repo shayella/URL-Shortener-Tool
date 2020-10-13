@@ -1,0 +1,7 @@
+*.pyc
+staticfiles
+.env
+
+__pycache__
+*.py[cod]
+.*$py.class
