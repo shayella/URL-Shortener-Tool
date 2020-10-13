@@ -131,7 +131,7 @@ STATICFILES_DIRS = [
 SHORTCODE_MAX =15
 SHORTCODE_MIN = 6
 
-URL_START_STRING = 'http://127.0.0.1:8000'
+URL_START_STRING = 'https://slash-link.herokuapp.com'
 
 # FOR PRODUCTION
 # Static files (CSS, JavaScript, Images)
