@@ -5,7 +5,7 @@
   <div class="main style1">
     <div class="container">
       <div class="row gtr-150">
-        <div class="col-10 off-2 col-12-medium align-left">
+        <div class="col-10 off-1 col-12-medium align-left">
           <div class="major">
             <h1 >URL Click Tracker</h1>
           </div>Get to know the number of times your short URL has been clicked so far. Simply type in the correct URL and track the clicks.</p>
@@ -20,7 +20,7 @@
           </div>
           {%endif%}
           <br>
-          <form class="" action="{%url 'url_count'%}" method="post">
+          <form id="url-count-form" action="{%url 'url_count'%}" method="post">
             {% csrf_token %}
             <table>
               <tr>

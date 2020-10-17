@@ -5,14 +5,16 @@
 	<div class="inner">
 		<!-- <span class="icon solid major fa-cloud fas fa-bezier-curve"></span> -->
 		<i class="icon solid major fas fa-unlink "></i>
-		<h1>Hi, I'm <strong>Slash</strong>, 	a free URL Shortener<br />
-	 <small id="small">Minify your links, and make them memorable in just seconds</small> </h1>
+		<h1>Hi, I'm <strong>Slash</strong>, 	a free URL Shortener <br />
+			<small id="small">Minify your links, and make them memorable in just seconds</small>
+		</h1>
+	  <!-- <p id="header-text">Minify your links, and make them memorable in just seconds</p> -->
 		<section class="main ">
 			<div class="container">
 				{% if form.url.errors%}
-				<div class="row gtr-150">
-					<div class="col-7 off-1 col-12-medium">
-						<div class="alert off-1 align-left">
+				<div id="id_error" class="row gtr-150">
+					<div class="col-9 col-12-large">
+						<div class="alert align-left">
 							{%for error in form.url.errors%}
 								<span>{{form.url.errors}}</span>
 							{%endfor%}
@@ -20,25 +22,24 @@
 					</div>
 				</div>
 				{%endif%}
-				<form class="row gtr-150"  action="{%url 'home' %}" method="post">
-					<div class="col-8 off-1 col-12-medium">
-						{% csrf_token %}
-						{% for field in form %}
-					    <div class="fieldWrapper">
-					        {{ field.label_tag }} {{ field }}
-					    </div>
-						{% endfor %}
-					</div>
-					<div class="col-3 align-left col-12-medium">
-						<p>
-							<input type="submit" name="" value="Shorten">
-						</p>
-					</div>
-				</form>
-
-				<div class="row gtr-150">
+				<form id="form-wrapper" class="row gtr-150"  action="{%url 'home' %}" method="post">
+									<div class="col-9  col-12-large">
+										{% csrf_token %}
+										{% for field in form %}
+									    <div class="fieldWrapper">
+									        {{ field.label_tag }} {{ field }}
+									    </div>
+										{% endfor %}
+									</div>
+									<div class="col-3  col-12-medium">
+										<p>
+											<input type="submit" name="" value="Shorten">
+										</p>
+									</div>
+								</form>
+				<div id="su-wrapper-home" class="row gtr-150">
 					{% if created %}
-					<div class="col-8 off-1 col-12-medium">
+					<div class="col-12  col-12-large">
 						<table>
 							<tr>
 								<td><h4>Your Shortened URL :-</h4></td>
@@ -53,28 +54,17 @@
 							</tr>
 						</table>
 					</div>
-					<div id="checkout-clicks" class="col-3 align-left col-12-medium ">
-						<table>
-							<tr>
-								<td>
-									<strong>Track & Analyse the number of clicks on any shortened URL</strong>
-									<span><a href="{%url 'url_count'%}">Track Now</a> </span>
-								 </td>
-							</tr>
-					</table>
-					</div>
-					{%else%}
-					<div id="checkout-clicks" class="col-8 off-1 align-left col-12-medium ">
-						<table>
-							<tr>
-								<td>
-									<strong>Track & Analyse the number of clicks on any shortened URL</strong>
-									<span><a href="{%url 'url_count'%}">Track Now</a> </span>
-								 </td>
-							</tr>
-					</table>
-					</div>
 					{%endif%}
+					<div id="checkout-clicks" class="col-12  col-12-medium ">
+						<table>
+							<tr>
+								<td >
+									<strong>Track & Analyse the number of clicks on any shortened URL</strong>
+									<span><a href="{%url 'url_count'%}">Track Now</a> </span>
+								 </td>
+							</tr>
+					</table>
+					</div>
 					</div>
 
 			</div>
