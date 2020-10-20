@@ -3864,6 +3864,9 @@ ul.errorlist{
 	color: rgb(0, 150, 255) !important;
 	text-decoration: none;
 }
+#error-page h1{
+	font-weight: bold;
+}
 
 #id_error{
 	margin:0;

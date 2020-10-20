@@ -35,9 +35,3 @@ def shortenurl_redirect_view(request, shortcode= None):
     obj = get_object_or_404(ShortenURL, shortcode = shortcode)
     print(ClickEvent.objects.create_event(obj))
     return HttpResponseRedirect(obj.url)
-
-# def error_404(request,exception):
-#     return render(request,'shortener/404.html')
-#
-# def error_500(request):
-#     return render(request,'shortener/500.html')

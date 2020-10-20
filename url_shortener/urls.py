@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.conf.urls import handler404,handler500
 from shortener import views as shortener_views
 
 urlpatterns = [
@@ -23,6 +22,3 @@ urlpatterns = [
     path('url-count/',include('analystics.urls')),
     path('',include('shortener.urls')),
 ]
-#
-# handler404 ="shortener.views.error_404"
-# handler500 ="shortener.views.error_500"
