@@ -6,5 +6,5 @@ my_default_errors = {
 }
 class SubmitURLForm(forms.Form):
     url = forms.URLField(label='',
-            widget=forms.URLInput(attrs={'placeholder': 'Paste long URL to shorten e.g. http:\\\\google.com'})
+            widget=forms.URLInput(attrs={'placeholder': 'Paste long URL to shorten'})
                                         , error_messages = my_default_errors)

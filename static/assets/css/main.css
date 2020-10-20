@@ -3650,7 +3650,8 @@ input, select, textarea {
 			/* Main wrapper */
 			.main {
 				padding: 1.5em 0 0.1em 0 ;
-					width: 100%;
+					width: 95%;
+					text-align: center;
 			}
 
 		/* Form Wrapper */
@@ -3740,7 +3741,9 @@ input, select, textarea {
 
 			.main {
 				padding: 2em 0 0.1em 0 ;
-				width: 100%;
+				width: 95%;
+				text-align: center;
+
 		}
 
 		/* Table */
