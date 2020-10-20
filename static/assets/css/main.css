@@ -1484,8 +1484,11 @@ input, select, textarea {
 					margin-top: 0;
 					margin-left: -3em;
 				}
+				.row.gtr-150 > * {
+					padding: 0 0 0 0;
+				}
 
-					.row.gtr-150 > * {
+					#one .row.gtr-150 > * {
 						padding: 0 0 0 2em;
 					}
 
@@ -1731,6 +1734,10 @@ input, select, textarea {
 				}
 
 					.row.gtr-150 > * {
+						padding: 0 0 0 0;
+					}
+
+				#one .row.gtr-150 > * {
 						padding: 0 0 0 3em;
 					}
 
@@ -1976,6 +1983,10 @@ input, select, textarea {
 				}
 
 					.row.gtr-150 > * {
+						padding: 0 0 0 0;
+					}
+
+					#one .row.gtr-150 > * {
 						padding: 0 0 0 3em;
 					}
 
