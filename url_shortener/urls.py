@@ -18,7 +18,7 @@ from django.urls import path,include
 from shortener import views as shortener_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('myadminsite/', admin.site.urls),
     path('url-count/',include('analystics.urls')),
     path('',include('shortener.urls')),
 ]
