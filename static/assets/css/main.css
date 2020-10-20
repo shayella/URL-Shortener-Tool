@@ -3619,6 +3619,13 @@ input, select, textarea {
 					margin: 2em 0 0 0;
 				}
 
+				/* One */
+
+					#one {
+						text-align: center;
+						padding-bottom: 1em;
+					}
+
 		/* Footer */
 
 			#footer {
@@ -3689,6 +3696,13 @@ input, select, textarea {
 					display: none;
 				}
 
+				/* One */
+
+					#one {
+						text-align: center;
+						padding-bottom: 1em;
+					}
+
 		/* Footer */
 
 			#footer {
@@ -3758,11 +3772,22 @@ input, select, textarea {
 		width: 40%;
 		vertical-align: 'baseline';
 	}
+	/* One */
+
+		#one {
+			text-align: center;
+			padding-bottom: 1em;
+		}
 
 	#su-wrapper-home{
 		margin:0;
 	}
 
+	/* One */
+
+		#one {
+			text-align: center;
+		}
 
 		/* Header */
 
