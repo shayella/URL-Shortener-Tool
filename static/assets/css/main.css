@@ -1486,7 +1486,7 @@ input, select, textarea {
 				}
 
 					.row.gtr-150 > * {
-						padding: 0 0 0 1em;
+						padding: 0 0 0 2em;
 					}
 
 					.row.gtr-150.gtr-uniform {
@@ -1731,7 +1731,7 @@ input, select, textarea {
 				}
 
 					.row.gtr-150 > * {
-						padding: 0 0 0 0;
+						padding: 0 0 0 3em;
 					}
 
 					.row.gtr-150.gtr-uniform {
@@ -1972,7 +1972,7 @@ input, select, textarea {
 
 				.row.gtr-150 {
 					margin-top: 0;
-					margin-left: 0em;
+					margin-left: -3em;
 				}
 
 					.row.gtr-150 > * {
